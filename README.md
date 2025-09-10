@@ -1,3 +1,3 @@
 Personal Website
 ------------------------------------------------------------
-https://github.com/Ilic02/Personal-Website.git
+https://ilic02.github.io/Personal-Website/
