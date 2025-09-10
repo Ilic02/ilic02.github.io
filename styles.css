@@ -1,0 +1,78 @@
+body {
+  transition: 0.5s;
+}
+
+body.light {
+  background-color: #e8e8e8;
+  color: #212121;
+}
+
+body.dark {
+  background-color: #212121;
+  color: #ffffff; /* glavni tekst */
+}
+
+body.dark .text-body-emphasis {
+  color: #ffffff !important;
+}
+
+body.dark .text-body-secondary {
+  color: #cccccc !important;
+}
+
+body.dark .nav-link {
+  color: #ffffff !important;
+}
+
+body.dark footer {
+  color: #cccccc !important;
+}
+
+.sun-icon, .moon-icon{
+    display: inline-block;
+}
+
+body.dark .sun-icon{
+    display: inline-block;
+}
+
+body.dark .moon-icon{
+    display: none;
+}
+
+.sun-icon{
+    display: none;
+}
+
+form{
+  padding: 10px;
+}
+
+input{
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  width: 300px;
+  border: none;
+}
+
+textarea{
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 180px;
+  width: 300px;
+  border: none;
+}
+
+body.dark input{
+    background-color: lightgray;
+}
+
+body.dark textarea{
+    background-color: lightgray;
+}
+
+body.dark span{
+  color: #ffffff;
+}

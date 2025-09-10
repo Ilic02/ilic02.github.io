@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nikola Ilic</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header
+        class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+      >
+        <p
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        >
+          <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+          <span class="fs-4">Nikola Ilic</span>
+        </p>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="./assets/CV-eng.pdf" class="nav-link" download="CV.pdf"
+              >CV</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <button
+              class="btn btn-outline-light"
+              id="darkMode"
+              style="border: none"
+            >
+              <span class="sun-icon">☀️</span>
+              <span class="moon-icon">🌙</span>
+            </button>
+          </li>
+        </ul>
+      </header>
+    </div>
+
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6 order-2">
+          <img
+            src="./assets/image.png"
+            class="d-block mx-lg-auto img-fluid"
+            alt="Bootstrap Themes"
+            width="300"
+            height="300"
+            loading="lazy"
+            style="border-radius: 50%"
+          />
+        </div>
+        <div class="col-lg-6 order-1">
+          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+            Hi there!
+          </h1>
+          <p class="lead">
+            My name is Nikola Ilic. I'm a Student of Computer Science at Faculty
+            of Mathematics, University of Belgrade, with hands-on experience in
+            building desktop and web applications. Focused on Java and C++
+            development. Passionate about backend development, teamwork, and
+            continuous learning through practical projects.
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="#contact">
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-lg px-4 me-md-2"
+              >
+                Contact
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <h1
+          id="projects"
+          class="display-5 fw-bold text-body-emphasis lh-1 mb-3"
+        >
+          Projects
+        </h1>
+        <div class="col-10 col-sm-8 col-lg-6 order-2">
+          <a
+            href="https://github.com/Ilic02/Password_Generator"
+            target="_blank"
+          >
+            <img
+              src="./assets/PasswordGenerator.png"
+              class="d-block mx-lg-auto img-fluid"
+              alt="Bootstrap Themes"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </a>
+        </div>
+        <div class="col-lg-6 order-1">
+          <ul>
+            <li>
+              <h2>Password Manager</h2>
+              <p class="lead">
+                This project is a Password Generator built using JavaFX. It
+                allows users to generate strong passwords based on their
+                preferences and saves them securely in a file. The application
+                also includes features such as clipboard copying, theme
+                toggling, and duplicate website detection.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6 order-2">
+          <a href="https://github.com/Ilic02/Sudoku-Solver" target="_blank">
+            <img
+              src="./assets/SudokuSolver.png"
+              class="d-block mx-lg-auto img-fluid"
+              alt="Bootstrap Themes"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </a>
+        </div>
+        <div class="col-lg-6 order-1">
+          <ul>
+            <li>
+              <h2>Sudoku Solver</h2>
+              <p class="lead">
+                This is a web-based Sudoku Solver that allows users to input a
+                Sudoku puzzle, validate it, and solve it with an implemented
+                backtracking algorithm. The project is built using HTML, CSS,
+                and JavaScript, and features a responsive design for mobile
+                devices along with a light/dark mode toggle for better user
+                experience.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-4 py-5 my-5 text-center">
+      <h1 class="display-5 fw-bold text-body-emphasis">Skills</h1>
+      <div class="col-lg-6 mx-auto">
+        <i title="Java" class="devicon-java-plain" style="font-size: 64px"></i>
+        <i
+          title="C++"
+          class="devicon-cplusplus-plain"
+          style="font-size: 64px"
+        ></i>
+        <i title="C" class="devicon-c-original" style="font-size: 64px"></i>
+        <i
+          title="HTML5"
+          class="devicon-html5-plain"
+          style="font-size: 64px"
+        ></i>
+        <i title="CSS3" class="devicon-css3-plain" style="font-size: 64px"></i>
+        <i
+          title="JavaScript"
+          class="devicon-javascript-plain"
+          style="font-size: 64px"
+        ></i>
+        <i title="GIT" class="devicon-git-plain" style="font-size: 64px"></i>
+        <i
+          title="NodeJS"
+          class="devicon-nodejs-plain"
+          style="font-size: 64px"
+        ></i>
+        <i
+          title="MongoDB"
+          class="devicon-mongodb-plain"
+          style="font-size: 64px"
+        ></i>
+        <i
+          title="PostgreSQL"
+          class="devicon-postgresql-plain"
+          style="font-size: 64px"
+        ></i>
+      </div>
+    </div>
+
+    <div class="px-4 py-5 my-5 text-center">
+      <h1 id="contact" class="display-5 fw-bold text-body-emphasis">
+        Contact Me
+      </h1>
+      <div class="col-lg-6 mx-auto">
+        <form
+          id="contactForm"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="6c60c3c4-f5c9-4b9b-b4d0-b2dba729d7fb"
+          />
+          <input type="text" name="name" placeholder="Your Name" /> <br />
+          <input type="text" name="email" placeholder="Your Email" /><br />
+          <textarea name="message" placeholder=" Your Message"></textarea><br />
+          <button class="btn btn-outline-primary">Contact Me</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a
+              href="https://www.linkedin.com/in/nikola-ili%C4%87-a98468342/"
+              target="_blank"
+              class="nav-link px-2 text-body-secondary"
+              ><i class="devicon-linkedin-plain" style="font-size: 36px"></i
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://github.com/Ilic02"
+              target="_blank"
+              class="nav-link px-2 text-body-secondary"
+              ><i class="devicon-github-original" style="font-size: 36px"></i>
+            </a>
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">
+          © 2025 Nikola Ilic. All Rights Reserved.
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      document.body.classList.add("light");
+      document.getElementById("darkMode").addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        document.body.classList.toggle("light");
+      });
+
+      const form = document.getElementById("contactForm");
+
+      form.addEventListener("submit", () => {
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nikola Ilic</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+      <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header
+        class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+      >
+        <p
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        >
+          <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+          <span class="fs-4">Nikola Ilic</span>
+        </p>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="./assets/CV-eng.pdf" class="nav-link" download="CV.pdf"
+              >CV</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="https://github.com/Ilic02" target="_blank" class="nav-link"
+              >GitHub</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <button
+              class="btn btn-outline-light"
+              id="darkMode"
+              style="border: none"
+            >
+              <span class="sun-icon">☀️</span>
+              <span class="moon-icon">🌙</span>
+            </button>
+          </li>
+        </ul>
+      </header>
+    </div>
+
+    <div class="px-4 py-5 my-5 text-center">
+      <h1 class="display-5 fw-bold text-body-emphasis">Message Sent Successfully!</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Thank you! Your message has been sent successfully. I’ll get back to you soon.
+        </p>
+          <a href="./index.html">
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+            Go back
+          </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+   <div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a href="https://www.linkedin.com/in/nikola-ili%C4%87-a98468342/" target="_blank"
+            class="nav-link px-2 text-body-secondary"><i class="devicon-linkedin-plain" style="font-size: 36px"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/Ilic02" target="_blank" class="nav-link px-2 text-body-secondary"><i
+              class="devicon-github-original" style="font-size: 36px"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-center text-body-secondary">© 2025 Nikola Ilic. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+    <script>
+      document.body.classList.add("light");
+      document.getElementById("darkMode").addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        document.body.classList.toggle("light");
+      });
+    </script>
+  </body>
+</html>
