@@ -95,3 +95,11 @@ body.dark span{
    60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
   100% { transform: rotate( 0.0deg) }
 }
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
