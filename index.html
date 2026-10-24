@@ -3,285 +3,479 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nikola Ilic</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
+    <title>Nikola Ilić · Software Developer</title>
+    <meta
+      name="description"
+      content="Nikola Ilić, Computer Science student at the University of Belgrade focused on Java, C++ and backend development."
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
+    <meta name="theme-color" content="#0b1020" />
 
+    <!-- Link previews (LinkedIn, Discord, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nikola Ilić · Software Developer" />
+    <meta
+      property="og:description"
+      content="Computer Science student focused on Java, C++ and backend development."
+    />
+    <meta property="og:url" content="https://ilic02.github.io/" />
+    <meta property="og:image" content="https://ilic02.github.io/assets/og-image.jpg" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="64x64" href="./assets/favicon.png" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css"
+    />
     <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Apply the saved/system theme before paint to avoid a flash -->
+    <script>
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (e) {}
+        if (!theme) {
+          theme = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.classList.add("js");
+      })();
+    </script>
   </head>
 
   <body>
-    <div class="container">
-      <header
-        class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
-      >
-        <p
-          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main">
+        <a href="#top" class="brand">
+          <span class="brand-mark" aria-hidden="true">NI</span>
+          <span>Nikola Ilić</span>
+        </a>
+
+        <button
+          class="icon-btn menu-btn"
+          id="menuBtn"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
         >
-          <svg class="bi me-2" width="40" height="32" aria-hidden="true">
-            <use xlink:href="#bootstrap"></use>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
           </svg>
-          <span class="fs-4">Nikola Ilic</span>
-        </p>
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a href="./assets/CV-eng.pdf" class="nav-link" download="CV.pdf"
-              >CV</a
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a
+              href="./assets/CV-eng.pdf"
+              class="btn btn-small btn-outline"
+              download="Nikola-Ilic-CV.pdf"
+              >Download CV</a
             >
-          </li>
-          <li class="nav-item">
-            <a href="#projects" class="nav-link">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link">Contact</a>
-          </li>
-          <li class="nav-item">
-            <button
-              class="btn btn-outline-light"
-              id="darkMode"
-              style="border: none"
-            >
-              <span class="sun-icon">☀️</span>
-              <span class="moon-icon">🌙</span>
-            </button>
           </li>
         </ul>
-      </header>
-    </div>
 
-    <div class="container col-xxl-8 px-4 py-5">
-      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div class="col-10 col-sm-8 col-lg-6 order-2">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero container" id="top">
+        <div class="hero-text">
+          <p class="eyebrow">Hi there, I'm <span class="wave" aria-hidden="true">👋</span></p>
+          <h1>Nikola Ilić</h1>
+          <p class="hero-role">
+            Computer Science student &amp; <span class="gradient-text">backend-focused developer</span>
+          </p>
+          <p class="hero-lead">
+            I study at the Faculty of Mathematics, University of Belgrade, and build
+            desktop and web applications, mostly in Java and C++. I enjoy backend
+            development, working in a team, and learning by building real projects.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get in touch</a>
+            <a href="#projects" class="btn btn-outline">See my work</a>
+          </div>
+          <ul class="socials" aria-label="Social links">
+            <li>
+              <a href="https://github.com/Ilic02" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="devicon-github-original" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/nikola-ili%C4%87-a98468342/"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <i class="devicon-linkedin-plain" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-avatar">
           <img
-            src="./assets/image.png"
-            class="d-block mx-lg-auto img-fluid"
-            alt="Bootstrap Themes"
-            width="300"
-            height="300"
-            loading="lazy"
-            style="border-radius: 50%"
+            src="./assets/avatar.webp"
+            alt="Illustrated avatar of an astronaut in space"
+            width="459"
+            height="459"
+            fetchpriority="high"
           />
         </div>
-        <div class="col-lg-6 order-1">
-          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
-            Hi there! <span class="wave">👋</span>
-          </h1>
-          <p class="lead">
-            My name is Nikola Ilic. I'm a Student of Computer Science at Faculty
-            of Mathematics, University of Belgrade, with hands-on experience in
-            building desktop and web applications. Focused on Java and C++
-            development. Passionate about backend development, teamwork, and
-            continuous learning through practical projects.
-          </p>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a href="#contact">
-              <button
-                type="button"
-                class="btn btn-outline-primary btn-lg px-4 me-md-2"
-              >
-                Contact
-              </button>
-            </a>
+      </section>
+
+      <!-- About / education -->
+      <section class="section container reveal" id="about">
+        <h2 class="section-title"><span class="section-num">01.</span> About</h2>
+        <div class="about-grid">
+          <div class="card">
+            <h3>What I do</h3>
+            <p>
+              I write Java and C++, and build user interfaces with JavaFX. Lately I've
+              been working more on the backend side with Node.js, Express and
+              databases like PostgreSQL and MongoDB. I use Linux and Git every day.
+            </p>
+            <p class="muted">English: C1, advanced (spoken and written)</p>
+          </div>
+          <div class="card">
+            <h3>Education</h3>
+            <ol class="timeline">
+              <li>
+                <span class="timeline-date">2021 – Present</span>
+                <strong>Faculty of Mathematics, University of Belgrade</strong>
+                <span class="muted">Computer Science</span>
+              </li>
+              <li>
+                <span class="timeline-date">2017 – 2021</span>
+                <strong>Electrical Engineering High School “Nikola Tesla”</strong>
+                <span class="muted">Belgrade</span>
+              </li>
+            </ol>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="container col-xxl-8 px-4 py-5">
-      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <h1
-          id="projects"
-          class="display-5 fw-bold text-body-emphasis lh-1 mb-3"
-        >
-          Projects
-        </h1>
-        <div class="col-10 col-sm-8 col-lg-6 order-2">
-          <a
-            href="https://github.com/Ilic02/Password_Generator"
-            target="_blank"
-          >
-            <img
-              src="./assets/PasswordGenerator.png"
-              class="d-block mx-lg-auto img-fluid"
-              alt="Bootstrap Themes"
-              width="400"
-              height="400"
-              loading="lazy"
-            />
-          </a>
-        </div>
-        <div class="col-lg-6 order-1">
-          <ul>
-            <li>
-              <h2>Password Generator</h2>
-              <p class="lead">
-                This project is a Password Generator built using JavaFX. It
-                allows users to generate strong passwords based on their
-                preferences and saves them securely in a file. The application
-                also includes features such as clipboard copying, theme
-                toggling, and duplicate website detection.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="container col-xxl-8 px-4 py-5">
-      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div class="col-10 col-sm-8 col-lg-6 order-2">
-          <a href="https://github.com/Ilic02/Sudoku-Solver" target="_blank">
-            <img
-              src="./assets/SudokuSolver.png"
-              class="d-block mx-lg-auto img-fluid"
-              alt="Bootstrap Themes"
-              width="400"
-              height="400"
-              loading="lazy"
-            />
-          </a>
-        </div>
-        <div class="col-lg-6 order-1">
-          <ul>
-            <li>
-              <h2>Sudoku Solver</h2>
-              <p class="lead">
-                This is a web-based Sudoku Solver that allows users to input a
-                Sudoku puzzle, validate it, and solve it with an implemented
-                backtracking algorithm. The project is built using HTML, CSS,
-                and JavaScript, and features a responsive design for mobile
-                devices along with a light/dark mode toggle for better user
-                experience.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="px-4 py-5 my-5 text-center">
-      <h1 class="display-5 fw-bold text-body-emphasis">Skills</h1>
-      <div class="col-lg-6 mx-auto">
-        <i title="Java" class="devicon-java-plain" style="font-size: 64px"></i>
-        <i
-          title="C++"
-          class="devicon-cplusplus-plain"
-          style="font-size: 64px"
-        ></i>
-        <i title="C" class="devicon-c-original" style="font-size: 64px"></i>
-        <i
-          title="HTML5"
-          class="devicon-html5-plain"
-          style="font-size: 64px"
-        ></i>
-        <i title="CSS3" class="devicon-css3-plain" style="font-size: 64px"></i>
-        <i
-          title="JavaScript"
-          class="devicon-javascript-plain"
-          style="font-size: 64px"
-        ></i>
-        <i title="GIT" class="devicon-git-plain" style="font-size: 64px"></i>
-        <i
-          title="NodeJS"
-          class="devicon-nodejs-plain"
-          style="font-size: 64px"
-        ></i>
-        <i
-          title="MongoDB"
-          class="devicon-mongodb-plain"
-          style="font-size: 64px"
-        ></i>
-        <i
-          title="PostgreSQL"
-          class="devicon-postgresql-plain"
-          style="font-size: 64px"
-        ></i>
-      </div>
-    </div>
-
-    <div class="px-4 py-5 my-5 text-center">
-      <h1 id="contact" class="display-5 fw-bold text-body-emphasis">
-        Contact Me
-      </h1>
-      <div class="col-lg-6 mx-auto">
-        <form
-          id="contactForm"
-          action="https://api.web3forms.com/submit"
-          method="POST"
-        >
-          <input
-            type="hidden"
-            name="access_key"
-            value="6c60c3c4-f5c9-4b9b-b4d0-b2dba729d7fb"
-          />
-          <input type="text" name="name" placeholder="Your Name" /> <br />
-          <input type="text" name="email" placeholder="Your Email" /><br />
-          <textarea name="message" placeholder=" Your Message"></textarea><br />
-          <button class="btn btn-outline-primary">Contact Me</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="container">
-      <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item">
+      <!-- Projects -->
+      <section class="section container reveal" id="projects">
+        <h2 class="section-title"><span class="section-num">02.</span> Projects</h2>
+        <div class="project-grid">
+          <article class="card project">
             <a
-              href="https://www.linkedin.com/in/nikola-ili%C4%87-a98468342/"
+              class="project-image"
+              href="https://ilic02.github.io/Sudoku-Solver/"
               target="_blank"
-              class="nav-link px-2 text-body-secondary"
-              ><i class="devicon-linkedin-plain" style="font-size: 36px"></i
-            ></a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="https://github.com/Ilic02"
-              target="_blank"
-              class="nav-link px-2 text-body-secondary"
-              ><i class="devicon-github-original" style="font-size: 36px"></i>
+              rel="noopener"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/sudoku-solver.webp"
+                alt="Sudoku Solver web app showing an empty 9×9 grid with Solve and Clear buttons"
+                width="866"
+                height="837"
+                loading="lazy"
+              />
             </a>
-          </li>
-        </ul>
-        <p class="text-center text-body-secondary">
-          © <script>document.write(new Date().getFullYear())</script> Nikola Ilic. All Rights Reserved.
+            <div class="project-body">
+              <h3>Sudoku Solver</h3>
+              <p>
+                A web app where you enter a Sudoku puzzle, check that it's valid, and
+                solve it with a backtracking algorithm. It works on phones and has
+                light and dark modes.
+              </p>
+              <ul class="tags" aria-label="Technologies">
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Backtracking</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://ilic02.github.io/Sudoku-Solver/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-small btn-primary"
+                  >Live demo ↗</a
+                >
+                <a
+                  href="https://github.com/Ilic02/Sudoku-Solver"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-small btn-outline"
+                  ><i class="devicon-github-original" aria-hidden="true"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="card project">
+            <a
+              class="project-image"
+              href="https://github.com/Ilic02/Password_Generator"
+              target="_blank"
+              rel="noopener"
+              tabindex="-1"
+            >
+              <img
+                src="./assets/password-generator.webp"
+                alt="Password Generator desktop window with length and character options"
+                width="708"
+                height="743"
+                loading="lazy"
+              />
+            </a>
+            <div class="project-body">
+              <h3>Password Generator</h3>
+              <p>
+                A JavaFX desktop app that generates strong passwords from your chosen
+                options and saves them to a file. It can copy passwords to the
+                clipboard, switch themes, and warn you about duplicate websites.
+              </p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Java</li>
+                <li>JavaFX</li>
+                <li>File I/O</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Ilic02/Password_Generator"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-small btn-outline"
+                  ><i class="devicon-github-original" aria-hidden="true"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="more-link">
+          <a href="https://github.com/Ilic02?tab=repositories" target="_blank" rel="noopener"
+            >More on GitHub →</a
+          >
         </p>
-      </footer>
-    </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section container reveal" id="skills">
+        <h2 class="section-title"><span class="section-num">03.</span> Skills</h2>
+        <div class="skill-groups">
+          <div class="card">
+            <h3>Languages</h3>
+            <ul class="skills">
+              <li><i class="devicon-java-plain colored" aria-hidden="true"></i>Java</li>
+              <li><i class="devicon-cplusplus-plain colored" aria-hidden="true"></i>C++</li>
+              <li><i class="devicon-c-plain colored" aria-hidden="true"></i>C</li>
+              <li><i class="devicon-javascript-plain colored" aria-hidden="true"></i>JavaScript</li>
+              <li><i class="devicon-html5-plain colored" aria-hidden="true"></i>HTML</li>
+              <li><i class="devicon-css3-plain colored" aria-hidden="true"></i>CSS</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Backend &amp; Databases</h3>
+            <ul class="skills">
+              <li><i class="devicon-nodejs-plain colored" aria-hidden="true"></i>Node.js</li>
+              <li><i class="devicon-express-original" aria-hidden="true"></i>Express</li>
+              <li><i class="devicon-postgresql-plain colored" aria-hidden="true"></i>PostgreSQL</li>
+              <li><i class="devicon-mongodb-plain colored" aria-hidden="true"></i>MongoDB</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Tools</h3>
+            <ul class="skills">
+              <li><i class="devicon-git-plain colored" aria-hidden="true"></i>Git</li>
+              <li><i class="devicon-linux-plain" aria-hidden="true"></i>Linux &amp; Bash</li>
+              <li><i class="devicon-intellij-plain colored" aria-hidden="true"></i>IntelliJ IDEA</li>
+              <li><i class="devicon-visualstudio-plain colored" aria-hidden="true"></i>Visual Studio</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section container reveal" id="contact">
+        <h2 class="section-title"><span class="section-num">04.</span> Contact</h2>
+        <div class="contact card">
+          <div class="contact-intro">
+            <h3>Let's work together</h3>
+            <p>
+              Looking for an intern or junior developer, or have a question about one
+              of my projects? Send me a message and I'll get back to you soon.
+            </p>
+          </div>
+
+          <form
+            id="contactForm"
+            class="contact-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            novalidate
+          >
+            <!-- Web3Forms access keys are public by design -->
+            <input type="hidden" name="access_key" value="6c60c3c4-f5c9-4b9b-b4d0-b2dba729d7fb" />
+            <input type="hidden" name="subject" value="New message from ilic02.github.io" />
+            <!-- Spam trap: hidden from people, bots fill it in -->
+            <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="field field-full">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <div class="form-footer field-full">
+              <button type="submit" class="btn btn-primary" id="submitBtn">Send message</button>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <p>© <span id="year">2026</span> Nikola Ilić</p>
+      <ul class="socials" aria-label="Social links">
+        <li>
+          <a href="https://github.com/Ilic02" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="devicon-github-original" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/nikola-ili%C4%87-a98468342/"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <i class="devicon-linkedin-plain" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
 
     <script>
-      document.body.classList.add("light");
-      document.getElementById("darkMode").addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-        document.body.classList.toggle("light");
+      const root = document.documentElement;
+
+      // Theme toggle (remembers your choice)
+      document.getElementById("themeToggle").addEventListener("click", () => {
+        const next = root.dataset.theme === "dark" ? "light" : "dark";
+        root.dataset.theme = next;
+        try {
+          localStorage.setItem("theme", next);
+        } catch (e) {}
       });
 
+      // Mobile menu
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+      const setMenu = (open) => {
+        navLinks.classList.toggle("open", open);
+        menuBtn.setAttribute("aria-expanded", String(open));
+        menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      };
+      menuBtn.addEventListener("click", () => setMenu(!navLinks.classList.contains("open")));
+      navLinks.addEventListener("click", (e) => {
+        if (e.target.closest("a")) setMenu(false);
+      });
+
+      // Fade sections in as they scroll into view
+      const reveals = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        reveals.forEach((el) => io.observe(el));
+      } else {
+        reveals.forEach((el) => el.classList.add("visible"));
+      }
+
+      // Footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Contact form
       const form = document.getElementById("contactForm");
+      const status = document.getElementById("formStatus");
+      const submitBtn = document.getElementById("submitBtn");
+
+      const showStatus = (text, type) => {
+        status.textContent = text;
+        status.className = "form-status " + type;
+      };
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const formData = new FormData(form);
-
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: formData
-        });
-
-        if(response.ok){
-          alert("Your message has been sent successfully!")
-          form.reset();
+        if (!form.checkValidity()) {
+          form.classList.add("submitted");
+          const firstInvalid = form.querySelector(":invalid");
+          if (firstInvalid) firstInvalid.focus();
+          showStatus("Please fill in every field with a valid email address.", "error");
+          return;
         }
-        else{
-          alert("Something went wrong. Please try again.")
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+        showStatus("", "");
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+          const result = await response.json().catch(() => ({}));
+
+          if (response.ok && result.success !== false) {
+            form.reset();
+            form.classList.remove("submitted");
+            showStatus("Thanks! Your message was sent. I'll reply soon.", "success");
+          } else {
+            showStatus(result.message || "Something went wrong. Please try again.", "error");
+          }
+        } catch (err) {
+          showStatus("Couldn't reach the server. Check your connection and try again.", "error");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send message";
         }
       });
     </script>
